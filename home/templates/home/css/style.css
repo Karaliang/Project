@@ -1,3 +1,4 @@
+/* static/css/style.css */
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +8,7 @@
 /*背景*/
 body {
     background-color: #ede0d4;
-
 }
-
 
 header {
     height: 100px;
@@ -20,27 +19,21 @@ header {
     font-size: 20pt;
     font-family: Comic Sans MS, Comic Sans, cursive;
     display: flex;
-    vertical-align: middle;
-    font-size: 20pt;
-    color: #EDEDED;
     justify-content: center; /* 水平方向置中 */
     align-items: center;    /* 垂直方向置中 */
 }
 
-.search{
+.search {
     height: 50px;
     width: 250px;
-    
 }
 
 /*搜尋*/
-.search_img{
+.search_img {
     width: 50px;
     height: 50px;
     padding: 0 0 0 0px;
-    
 }
-
 
 /*up往上*/
 .start {
@@ -52,7 +45,6 @@ header {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-
     animation: pulsate 6s linear infinite;
 }
 
@@ -62,8 +54,7 @@ header {
     font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
-.table{
-    
+.table {
     font-size: 15pt;
     margin: 50px auto;
     text-align: center;
@@ -71,7 +62,7 @@ header {
     width: 1500px;
     table-layout: fixed;
 }
-.td{
+
+.td {
     text-align: left;
-    
 }

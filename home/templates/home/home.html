@@ -1,3 +1,4 @@
+<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,18 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chat News</title>
-    <link rel="stylesheet" href="css/style.css">
-
-    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-       
 <body>
-
     <header>
         <input class="search" type="search" id="search" placeholder="Search for something...">
         <!--搜尋-->
-        <input class="search_img" type="image" name="submit_Btn" id="submit_Btn" img src="image/search.png" onClick="" >
-
+        <input class="search_img" type="image" name="submit_Btn" id="submit_Btn" src="{% static 'images/search.png' %}" alt="Search">
     </header>
 
     <!--up往上-->
@@ -42,12 +39,6 @@
       <tr>
         <td class="td">1</td>
       </tr>
-
-    
     </table>
-    
-
-    
-
 </body>
 </html>
