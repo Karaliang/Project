@@ -1,41 +1,45 @@
-/* static/css/style.css */
+/* 通用樣式 */
 * {
     margin: 0;
     padding: 0;
     font-family: 標楷體;
 }
 
-/*背景*/
+/* 背景 */
 body {
     background-color: #ede0d4;
 }
 
+/* 頭部 */
 header {
     height: 100px;
     width: 100%;
-    background-color:#ddb892;
+    background-color: #ddb892;
     color: white;
     text-align: center;
     font-size: 20pt;
     font-family: Comic Sans MS, Comic Sans, cursive;
     display: flex;
     justify-content: center; /* 水平方向置中 */
-    align-items: center;    /* 垂直方向置中 */
+    align-items: center;     /* 垂直方向置中 */
 }
 
+/* 搜尋框 */
 .search {
     height: 50px;
-    width: 250px;
+    width: 60%;
+    max-width: 250px; /* 限制最大寬度 */
 }
 
-/*搜尋*/
+/* 搜尋按鈕 */
 .search_img {
     width: 50px;
     height: 50px;
-    padding: 0 0 0 0px;
+    padding: 0;
+    box-sizing: content-box;
 }
 
-/*up往上*/
+/* up 往上按鈕 */
 .start {
     position: fixed;
     bottom: 20px;
@@ -54,15 +58,28 @@ header {
     font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
+/* 表格 */
 .table {
     font-size: 15pt;
-    margin: 50px auto;
+    margin: 20px auto; /* 調整上下間距 */
     text-align: center;
     border-color: #7f5539;
-    width: 1500px;
+    width: 90%; /* 使用百分比，以便自適應 */
+    max-width: 800px; /* 限制最大寬度 */
     table-layout: fixed;
 }
 
 .td {
     text-align: left;
+}
+
+/* 響應式設計 */
+@media screen and (max-width: 768px) {
+    /* 調整搜尋框和表格寬度 */
+    .search {
+        width: 80%;
+    }
+    .table {
+        font-size: 12pt;
+    }
 }
