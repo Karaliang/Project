@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat News</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+      <div class="search-container">
+        <form method="GET" action="{% url 'index' %}">
+            <input class="search" type="search" name="q" id="search" placeholder="Search for something..." >
+            <input class="search_img" type="image" name="submit_Btn" id="submit_Btn" src="{% static 'images/search.png' %}" alt="Search">
+        </form>
+      </div>
+    </header>
+
+    <!--up往上-->
+    <a href="#top">
+        <div class="start">
+            <h3>up!</h3>
+        </div>
+    </a>
+
+    <div class="table-container">
+      <div class="table-title">
+        <p>新聞</p>
+      </div>
+      <table class="table">
+        <thead>
+            <tr>
+                <th>標題</th>
+                <th>發文時間</th>
+                <th>作者</th>
+                <th>網址</th>
+                <th>情緒分析回饋</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% if page_obj %}
+            {% for news in page_obj %}
+                <tr>
+                    <td>{{ news.title }}</td>
+                    <td>{{ news.full_post_time }}</td>
+                    <td>{{ news.author }}</td>
+                    <td class="url-column"><a href="{{ news.url }}">{{ news.url|truncatechars:20 }}</a></td>
+                    <td class="feedback-column">{{ news.sentiment_feedback }}</td>
+                </tr>
+            {% endfor %}
+          {% else %}
+              <tr>
+                  <td colspan="5" class="noresults">No results found</td>
+              </tr>
+          {% endif %}
+        </tbody>
+        </table>
+        <!-- 分页导航 -->
+        <div class="pagination">
+          <span class="step-links">
+              {% if page_obj.has_previous %}
+                  <a href="?q={{ query }}&page=1">&laquo; first</a>
+                  <a href="?q={{ query }}&page={{ page_obj.previous_page_number }}">previous</a>
+              {% endif %}
+
+              <span class="current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </span>
+
+              {% if page_obj.has_next %}
+                  <a href="?q={{ query }}&page={{ page_obj.next_page_number }}">next</a>
+                  <a href="?q={{ query }}&page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+              {% endif %}
+          </span>
+      </div>
+    </div>  
+</body>
+</html>
