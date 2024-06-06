@@ -1,0 +1,148 @@
+/* 通用樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 標楷體;
+    box-sizing: border-box; /* 确保 padding 和 border 包括在元素的总宽度和高度内 */
+}
+
+/* 背景 */
+body {
+    background-color: #ede0d4;
+}
+
+/* 頭部 */
+header {
+    height: 100px;
+    width: 100%;
+    background-color: #ddb892;
+    color: white;
+    text-align: center;
+    font-size: 20pt;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    display: flex;
+    justify-content: center; /* 水平方向置中 */
+    align-items: center;     /* 垂直方向置中 */
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center;
+}
+
+/* 搜尋框 */
+.search {
+    height: 50px;
+    width: 100%;
+    max-width: 300px; /* 限制最大寬度 */
+    margin-right: 10px; /* 确保输入框与按钮之间有间距 */
+}
+
+/* 搜尋按鈕 */
+.search_img {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+/* up 往上按鈕 */
+.start {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    transition: 0.2s;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: pulsate 6s linear infinite;
+}
+
+.start h3 {
+    padding: 28px;
+    color: #1c3b55;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+/*標題與表格*/
+.table-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+/*表格題目*/
+.table-title p {
+    text-align: center;
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+/* 表格 */
+.table {
+    font-size: 15pt;
+    margin: 20px auto;
+    text-align: center;
+    border-color: #7f5539;
+    width: 90%; /* 使用百分比，以便自適應 */
+    max-width: 1500px; /* 限制最大寬度 */
+    border-collapse: collapse; /* 确保表格边框不重复 */
+}
+
+.table th, .table td {
+    padding: 10px; /* 添加 padding 以增加单元格内间距 */
+    border: 1px solid #7f5539;
+}
+
+td {
+    text-align: left;
+    padding: 3px;
+}
+
+.feedback-column, .noresults {
+    text-align: center;
+}
+
+/* 分页导航 */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.step-links a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #7f5539;
+    border-radius: 5px;
+    color: #1c3b55;
+}
+
+.step-links a:hover {
+    background-color: #ddb892;
+    color: white;
+}
+
+.current {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #7f5539;
+    border-radius: 5px;
+    background-color: #7f5539;
+    color: white;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    /* 调整搜索框和表格宽度 */
+    .search {
+        width: 80%;
+    }
+    .table {
+        font-size: 12pt;
+    }
+}
+
